@@ -1,10 +1,10 @@
-FROM fametec/glpi:9.5.4-php-fpm as PHP
+FROM pginao/glpi:9.4.6-php-fpm as PHP
 
 FROM nginx:alpine
 
-MAINTAINER eduardo@fametec.com.br
+MAINTAINER itsupport@pgimexico.mx   
 
-ENV VERSION 9.5.4
+ENV VERSION 9.4.6
 
 WORKDIR /usr/share/nginx/html
 

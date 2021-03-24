@@ -1,7 +1,7 @@
 version: "3.3"
 services:
     mariadb-glpi: 
-        image: fametec/glpi:9.5.4-mariadb
+        image: pginao/glpi:9.4.6-mariadb
         restart: unless-stopped
         volumes:
           - mariadb-glpi-volume:/var/lib/mysql:rw
@@ -17,7 +17,7 @@ services:
 #
 #
     glpi: 
-        image: fametec/glpi:9.5.4-nginx
+        image: pginao/glpi:9.4.6-nginx
         restart: unless-stopped
         volumes:
           - glpi-volume-files:/usr/share/nginx/html/glpi/files:rw
@@ -32,7 +32,7 @@ services:
           - glpi-backend
 
     php-fpm: 
-        image: fametec/glpi:9.5.4-php-fpm
+        image: pginao/glpi:9.4.6-php-fpm
         restart: unless-stopped
         volumes:
           - glpi-volume-files:/usr/share/nginx/html/glpi/files:rw
@@ -45,7 +45,7 @@ services:
 #          - 9000:9000
 #
     # cron:
-    #     image: fametec/glpi-cron-php-fpm:latest
+    #     image: pginao/glpi-cron-php-fpm:latest
     #     restart: unless-stopped
     #     volumes:
     #       - glpi-volume-files:/usr/share/nginx/html/glpi/files:rw
